@@ -1,0 +1,30 @@
+-- utf8_general_ci
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(32) UNIQUE,
+	PRIMARY KEY (id)
+);
+
+DROP TABLE IF EXISTS `vod`;
+CREATE TABLE `vod` (
+	id int NOT NULL AUTO_INCREMENT,
+    	idUser int NOT NULL,
+   	name varchar(32),
+    	PRIMARY KEY (id),
+    	FOREIGN KEY (idUser) REFERENCES `user`(id)
+);
+
+INSERT INTO `user` (name) VALUES ("Axolootl"), ("Blacacia"), ("Babulle");
+
+INSERT INTO `vod` (idUser, name) VALUES 
+((SELECT id FROM `user` WHERE name = "Axolootl"), "Stream Dessin"),
+((SELECT id FROM `user` WHERE name = "Axolootl"), "Stream Dark Soul"),
+((SELECT id FROM `user` WHERE name = "Axolootl"), "Stream Gartic Phone"),
+((SELECT id FROM `user` WHERE name = "Blacacia"), "Stream Monster Huner"),
+((SELECT id FROM `user` WHERE name = "Blacacia"), "Stream Satisfactory"),
+((SELECT id FROM `user` WHERE name = "Blacacia"), "Stream Clair Obscure"),
+((SELECT id FROM `user` WHERE name = "Babulle"), "Stream Politique"),
+((SELECT id FROM `user` WHERE name = "Babulle"), "Stream Karaoké"),
+((SELECT id FROM `user` WHERE name = "Babulle"), "Stream Beat Saber");
