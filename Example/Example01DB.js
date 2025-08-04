@@ -1,4 +1,7 @@
 
+//npm install mysql2
+//node Example/Example01DB.js
+
 // import mySQL module.
 const mysql = require('mysql2');
 

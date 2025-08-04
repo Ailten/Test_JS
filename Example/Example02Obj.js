@@ -1,4 +1,6 @@
 
+//node Example/Example02Obj.js
+
 // example of object init freely.
 let myObj = {
 	id: 1,
