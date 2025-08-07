@@ -1,0 +1,33 @@
+
+h1{
+	text-align: center;
+}
+
+#todo-list-container{
+	margin: 0 auto;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 600px;
+}
+
+.line-todo{
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+.add-todo .line-todo *{
+	width: 100%;
+}
+
+.cell-todo{
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 3px;
+	width: fit-content;
+	display: inline-block;
+}
+.cell-todo:nth-child(n+2){
+	margin-left: 5px;
+}

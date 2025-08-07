@@ -1,0 +1,6 @@
+
+to execute react Example :
+
+npm start
+
+from folder my-project-react-test

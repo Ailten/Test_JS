@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\NodeJS"
+    "\\Example",
+    "\\my-project-react-test",
+    "\\my-project-react-test\\src"
   ],
-  "SelectedNode": "\\NodeJS\\Example03Func.js",
+  "SelectedNode": "\\my-project-react-test\\src\\Todo.js",
   "PreviewInSolutionExplorer": false
 }
