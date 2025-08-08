@@ -31,7 +31,7 @@ class TodoList extends Component {
 
 	pushTodo = (e) => {
 		this.state.thingsTodo.push({ //increase array.
-			id: TodoList.todoInstanceCount,
+			id: TodoList.todoInstanceCount++,
 			libele: "[no task]"
 		});
 		this.setState({ thingsTodo: this.state.thingsTodo }); //update array for print.
