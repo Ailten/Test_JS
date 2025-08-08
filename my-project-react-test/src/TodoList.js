@@ -14,9 +14,9 @@ class TodoList extends Component {
 		return (
 			<div className="todo-list-container">
 				<div className="list-todo">
-					{this.state.thingsTodo.map((t) => {
-						return t.render();
-					})}
+					{this.state.thingsTodo.map((t) => 
+						<Todo params={t}/>
+					)}
 				</div>
 				<div className="add-todo">
 					<div className="line-todo">
@@ -28,7 +28,10 @@ class TodoList extends Component {
 	}
 
 	pushTodo = (e) => {
-		this.state.thingsTodo.push(new Todo()); //increase array.
+		this.state.thingsTodo.push({ //increase array.
+			idTodo: this.state.thingsTodo.length,
+			libele: "[no task]"
+		});
 		this.setState({ thingsTodo: this.state.thingsTodo }); //update array for print.
 	}
 

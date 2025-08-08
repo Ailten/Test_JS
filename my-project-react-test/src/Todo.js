@@ -1,27 +1,28 @@
+import { Component } from 'react';
 
+class Todo extends Component {
 
-class Todo {
-
-	static idCount = 1;
-
-	constructor() {
-		this.id = Todo.idCount++;
-		this.libele = "[Empty Task]";
+	constructor(props) {
+		super(props);
+		this.state = {
+			idTodo: props.params.idTodo || 0,
+			libele: props.params.libele || "[no task]"
+		}
 	}
 
 	render() {
 		return (
 			<div className="line-todo">
-				<div className="cell-todo">({this.id})</div>
+				<div className="cell-todo">({this.state.idTodo + 1})</div>
 				<div className="cell-todo">
-					<input type="text" value={this.libele} onChange={this.setLibele} />
+					<input type="text" value={this.state.libele} onChange={this.setLibele} />
 				</div>
 			</div>
 		);
 	}
 
 	setLibele = (e) => {
-		this.libele = e.target.value; // update is not updating in ral time !! FIX ME.
+		this.setState({ libele: e.target.value }); // update is not updating in ral time !! FIX ME.
 	}
 
 }
