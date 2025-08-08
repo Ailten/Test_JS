@@ -5,15 +5,15 @@ class Todo extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			idTodo: props.params.idTodo || 0,
-			libele: props.params.libele || "[no task]"
+			numOrder: props.numOrder || 0,
+			libele: props.libele || "[no task]"
 		}
 	}
 
 	render() {
 		return (
 			<div className="line-todo">
-				<div className="cell-todo">({this.state.idTodo + 1})</div>
+				<div className="cell-todo">({this.state.numOrder + 1})</div>
 				<div className="cell-todo">
 					<input type="text" value={this.state.libele} onChange={this.setLibele} />
 				</div>

@@ -3,6 +3,8 @@ import Todo from './Todo';
 
 class TodoList extends Component {
 
+	static todoInstanceCount = 1;
+
 	constructor() {
 		super();
 		this.state = {
@@ -14,8 +16,8 @@ class TodoList extends Component {
 		return (
 			<div className="todo-list-container">
 				<div className="list-todo">
-					{this.state.thingsTodo.map((t) => 
-						<Todo params={t}/>
+					{this.state.thingsTodo.map((t, i) => 
+						<Todo key={t.id} libele={t.libele} numOrder={i} />
 					)}
 				</div>
 				<div className="add-todo">
@@ -29,7 +31,7 @@ class TodoList extends Component {
 
 	pushTodo = (e) => {
 		this.state.thingsTodo.push({ //increase array.
-			idTodo: this.state.thingsTodo.length,
+			id: TodoList.todoInstanceCount,
 			libele: "[no task]"
 		});
 		this.setState({ thingsTodo: this.state.thingsTodo }); //update array for print.
